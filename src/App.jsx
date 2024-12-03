@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import Header from "./ components/Header";
-import Section1 from "./ components/Section1";
-import Section2 from "./ components/Section2";
-import Section3 from "./ components/Section3";
-import Dots from "./ components/Dots";
+import Header from "./components/Header/Header";
+import Section1 from "./components/Sections/Section1/Section1";
+import Section2 from "./components/Sections/Section2/Section2";
+import Section3 from "./components/Sections/Section3/Section3";
+import Dots from "./components/Dots/Dots";
 
 import styles from "./App.module.css";
 
