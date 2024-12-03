@@ -21,12 +21,33 @@ function App() {
     { id: 3, color: "#7fff7f", text: "Секція 3: Завершення" },
   ];
 
+  // Ініціалізація теми з localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setIsDarkMode(savedTheme === "dark");
     }
+  }, []);
 
+  // Оновлення теми
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("theme", newMode ? "dark" : "light"); // Збереження теми в localStorage
+      console.log(`Тема змінена: ${newMode ? "Темна" : "Світла"}`);
+      return newMode;
+    });
+  };
+
+  useEffect(() => {
     const handleScroll = () => {
       if (isScrollingRef.current) return;
 
@@ -60,22 +81,6 @@ function App() {
       isScrollingRef.current = false;
     }, 800);
   };
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      localStorage.setItem("theme", newMode ? "dark" : "light");
-      return newMode;
-    });
-  };
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-  }, [isDarkMode]);
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);

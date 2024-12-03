@@ -26,6 +26,7 @@ function Header({
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(index);
+              setIsMenuOpen(false); // Закриваємо меню після натискання на лінк
             }}
           >
             {section.text}
@@ -44,8 +45,8 @@ function Header({
         )}
       </div>
       {isMenuOpen && (
-        <div className={`${styles.burgerMenuContainer}`} onClick={closeMenu}>
-          <div className={styles.burgerMenuClose} onClick={() => toggleMenu()}>
+        <div className={styles.burgerMenuContainer} onClick={closeMenu}>
+          <div className={styles.burgerMenuClose} onClick={toggleMenu}>
             ✖
           </div>
           <div className={styles.burgerMenuItems}>
@@ -59,6 +60,7 @@ function Header({
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection(index);
+                  toggleMenu(); // Закриваємо меню після переходу до секції
                 }}
               >
                 {section.text}
