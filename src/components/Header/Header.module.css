@@ -77,3 +77,41 @@
     font-size: 18px;
   }
 }
+
+.burgerMenuContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* Додаткові стилі для головного меню */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.burgerMenuClose {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .burgerMenuContainer {
+    display: none; /* Сховати бургер-меню на великому екрані */
+  }
+
+  .navLinks {
+    display: flex; /* Власне "розгорнуте" меню, показане на великому екрані */
+    /* Додаткові стилі для головного меню */
+  }
+
+  .burgerMenu {
+    display: none; /* Сховати іконку бургера */
+  }
+}

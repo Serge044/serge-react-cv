@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Header.module.css";
 
 function Header({
@@ -12,10 +13,12 @@ function Header({
 }) {
   return (
     <header className={styles.stickyHeader}>
+      {/* Бутон бургер-меню для мобільних пристроїв */}
       <div className={styles.burgerMenu} onClick={toggleMenu}>
         ☰
       </div>
-      <div className={styles.navLinks}>
+      {/* Основна навігація */}
+      <nav className={styles.navLinks}>
         {sections.map((section, index) => (
           <a
             key={section.id}
@@ -32,7 +35,8 @@ function Header({
             {section.text}
           </a>
         ))}
-      </div>
+      </nav>
+      {/* Перемикач теми */}
       <div className={styles.themeToggle} onClick={toggleTheme}>
         {isDarkMode ? (
           <span role="img" aria-label="moon">
@@ -44,6 +48,7 @@ function Header({
           </span>
         )}
       </div>
+      {/* Бургер-меню для роботи з мобільними пристроями */}
       {isMenuOpen && (
         <div className={styles.burgerMenuContainer} onClick={closeMenu}>
           <div className={styles.burgerMenuClose} onClick={toggleMenu}>

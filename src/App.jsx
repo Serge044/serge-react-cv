@@ -21,6 +21,21 @@ function App() {
     { id: 3, color: "#7fff7f", text: "Секція 3: Завершення" },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        // Можна адаптувати за власними вимогами
+        setIsMenuOpen(false); // Закриваємо меню, якщо переходить на великий екран
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   // Ініціалізація теми з localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
