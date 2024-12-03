@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Світла тема */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Темна тема */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Стилі для хедера */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для бургер-меню */
+.burger-menu {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Іконка теми */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+/* Стилі для мобільних пристроїв */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: none;
+  }
+
+  .burger-menu-container.open {
+    display: block;
+  }
+
+  .burger-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .burger-menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .burger-menu-items a {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+
+  /* Підсвічування активного елементу в бургер-меню */
+  .burger-menu-items a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+/* Стилі для крапок */
+.dots-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
