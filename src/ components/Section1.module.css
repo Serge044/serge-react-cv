@@ -1,0 +1,9 @@
+.section {
+  background-color: #ff7f7f;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  scroll-snap-align: start;
+}

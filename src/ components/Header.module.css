@@ -1,0 +1,79 @@
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.burgerMenu {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.navLink {
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.themeToggle {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .burgerMenuContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: block;
+  }
+
+  .burgerMenuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .burgerMenuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .burgerMenuItems .navLink {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+}

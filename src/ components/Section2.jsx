@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Section2.module.css";
 
-function Section2() {
+const Section2 = React.forwardRef((props, ref) => {
   return (
-    <div className={styles.section} id="2">
+    <div ref={ref} className={styles.section}>
       <h1>Vite + React</h1>
     </div>
   );
-}
+});
 
 export default Section2;

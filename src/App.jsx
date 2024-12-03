@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import "./App.css";
+import Header from "./ components/Header";
+import Section1 from "./ components/Section1";
+import Section2 from "./ components/Section2";
+import Section3 from "./ components/Section3";
+import Dots from "./ components/Dots";
+
+import styles from "./App.module.css";
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,7 +22,6 @@ function App() {
   ];
 
   useEffect(() => {
-    // Перевіряємо збережену тему
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setIsDarkMode(savedTheme === "dark");
@@ -59,14 +64,12 @@ function App() {
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
-      // Зберігаємо вибрану тему в локальному сховищі
       localStorage.setItem("theme", newMode ? "dark" : "light");
       return newMode;
     });
   };
 
   useEffect(() => {
-    // Додаємо або видаляємо клас теми в залежності від вибору
     if (isDarkMode) {
       document.body.classList.add("dark-mode");
     } else {
@@ -79,7 +82,6 @@ function App() {
   };
 
   const closeMenu = (e) => {
-    // Закриваємо меню, якщо натискаємо за межами меню
     if (e.target === e.currentTarget) {
       setIsMenuOpen(false);
     }
@@ -87,87 +89,26 @@ function App() {
 
   return (
     <>
-      <header className="sticky-header">
-        <div className="burger-menu" onClick={toggleMenu}>
-          ☰
-        </div>
-        <div className="nav-links">
-          {sections.map((section, index) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className={`nav-link ${activeIndex === index ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(index);
-                setIsMenuOpen(false); // Закриваємо меню після натискання на лінк
-              }}
-            >
-              {section.text}
-            </a>
-          ))}
-        </div>
-        <div className="theme-toggle" onClick={toggleTheme}>
-          {isDarkMode ? (
-            <span role="img" aria-label="moon">
-              🌙
-            </span>
-          ) : (
-            <span role="img" aria-label="sun">
-              🌞
-            </span>
-          )}
-        </div>
-      </header>
+      <Header
+        sections={sections}
+        activeIndex={activeIndex}
+        scrollToSection={scrollToSection}
+        toggleTheme={toggleTheme}
+        isDarkMode={isDarkMode}
+        isMenuOpen={isMenuOpen}
+        toggleMenu={toggleMenu}
+        closeMenu={closeMenu}
+      />
 
-      <div ref={containerRef} className="container" onClick={closeMenu}>
-        {sections.map((section, index) => (
-          <div
-            key={section.id}
-            ref={(el) => (sectionsRef.current[index] = el)}
-            className="section"
-            style={{ backgroundColor: section.color }}
-            id={section.id}
-          >
-            <h1>{section.text}</h1>
-          </div>
-        ))}
-
-        <div className="dots-container">
-          {sections.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${activeIndex === index ? "active" : ""}`}
-              onClick={() => scrollToSection(index)}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Бургер меню */}
-      <div
-        className={`burger-menu-container ${isMenuOpen ? "open" : ""}`}
-        onClick={closeMenu}
-      >
-        <div className="burger-menu-close" onClick={() => setIsMenuOpen(false)}>
-          ✖
-        </div>
-        <div className="burger-menu-items">
-          {sections.map((section, index) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className={`nav-link ${activeIndex === index ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(index);
-                setIsMenuOpen(false);
-              }}
-            >
-              {section.text}
-            </a>
-          ))}
-        </div>
+      <div ref={containerRef} className={styles.container} onClick={closeMenu}>
+        <Section1 ref={(el) => (sectionsRef.current[0] = el)} />
+        <Section2 ref={(el) => (sectionsRef.current[1] = el)} />
+        <Section3 ref={(el) => (sectionsRef.current[2] = el)} />
+        <Dots
+          sections={sections}
+          activeIndex={activeIndex}
+          scrollToSection={scrollToSection}
+        />
       </div>
     </>
   );

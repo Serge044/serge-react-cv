@@ -1,9 +1,0 @@
-.section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s;
-}
-
-/* Встановіть колір секції для кожного з модулів відповідно до вашої теми */

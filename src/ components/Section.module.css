@@ -1,0 +1,8 @@
+.section {
+  scroll-snap-align: start; /* задає позицію, де секція повинна прилипнути */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
