@@ -29,7 +29,8 @@ function Header({
             onClick={(e) => {
               e.preventDefault();
               scrollToSection(index);
-              setIsMenuOpen(false); // Закриваємо меню після натискання на лінк
+              // setIsMenuOpen(false); // Закриваємо меню після натискання на лінк
+              toggleMenu();
             }}
           >
             {section.text}

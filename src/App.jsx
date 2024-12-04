@@ -3,6 +3,9 @@ import Header from "./components/Header/Header";
 import Section1 from "./components/Sections/Section1/Section1";
 import Section2 from "./components/Sections/Section2/Section2";
 import Section3 from "./components/Sections/Section3/Section3";
+import Section4 from "./components/Sections/Section4/Section4";
+import Section5 from "./components/Sections/Section5/Section5";
+import Section6 from "./components/Sections/Section6/Section6";
 import Dots from "./components/Dots/Dots";
 
 import styles from "./App.module.css";
@@ -16,9 +19,12 @@ function App() {
   const isScrollingRef = useRef(false);
 
   const sections = [
-    { id: 1, color: "#ff7f7f", text: "Секція 1: Вступ" },
-    { id: 2, color: "#7fafff", text: "Vite + React" },
-    { id: 3, color: "#7fff7f", text: "Секція 3: Завершення" },
+    { id: 1, color: "#ff7f7f", text: "Секція 1" },
+    { id: 2, color: "#7fafff", text: "Секція 2" },
+    { id: 3, color: "#7fff7f", text: "Секція 3" },
+    { id: 4, color: "#eb5bc0", text: "Секція 4" },
+    { id: 5, color: "#eb5bc0", text: "Секція 5" },
+    { id: 6, color: "#eb5bc0", text: "Секція 6" },
   ];
 
   useEffect(() => {
@@ -124,6 +130,9 @@ function App() {
         <Section1 ref={(el) => (sectionsRef.current[0] = el)} />
         <Section2 ref={(el) => (sectionsRef.current[1] = el)} />
         <Section3 ref={(el) => (sectionsRef.current[2] = el)} />
+        <Section4 ref={(el) => (sectionsRef.current[3] = el)} />
+        <Section5 ref={(el) => (sectionsRef.current[4] = el)} />
+        <Section6 ref={(el) => (sectionsRef.current[5] = el)} />
         <Dots
           sections={sections}
           activeIndex={activeIndex}

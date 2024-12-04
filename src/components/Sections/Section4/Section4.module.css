@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+
+.section {
+  background-color: #f3cf57;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  scroll-snap-align: start;
+}
+
+/* --- */
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+.phoneContainer {
+  width: 320px;
+  height: 660px;
+  border-radius: 30px;
+  padding: 20px;
+  background: linear-gradient(180deg, #1e1e2f, #3a3a5f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.dynamicIsland {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 120px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  transition: width 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+}
+
+.dynamicIsland.expanded {
+  width: 90%;
+  height: 70px;
+}
+
+.widget {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 45%;
+  color: white;
+  font-size: 14px;
+}
+
+.sunIcon {
+  width: 24px;
+  height: 24px;
+  background: yellow;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.iconsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}

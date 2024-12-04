@@ -1,0 +1,41 @@
+.section {
+  background-color: #488418;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  scroll-snap-align: start;
+}
+
+/* --- */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: linear-gradient(180deg, #d9fdd3, #b6e3b6);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.owlImage {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #388e3c;
+}
+
+.text {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+}
