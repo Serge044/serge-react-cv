@@ -1,4 +1,4 @@
-.section {
+/* .section {
   background-color: #7fff7f;
   height: 100vh;
   display: flex;
@@ -8,7 +8,6 @@
   scroll-snap-align: start;
 }
 
-/* --- */
 
 .container {
   padding: 40px;
@@ -69,4 +68,127 @@ hr {
   height: 1px;
   border: none;
   background-color: #ddd;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&family=Rubik:wght@800&display=swap");
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  scroll-snap-align: start;
+  background-color: var(--background-color);
+}
+
+[data-theme="light"] .section {
+  --background-color: #fff;
+}
+
+[data-theme="dark"] .section {
+  --background-color: #2a2a2a;
+  color: #ccc;
+}
+
+.container {
+  padding: 40px;
+  text-align: left;
+  background-color: var(--container-bg-color, #fff);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] .container {
+  --container-bg-color: #fff;
+  color: #333;
+}
+
+[data-theme="dark"] .container {
+  --container-bg-color: #3a3a3a;
+  color: #ddd;
+}
+
+.title {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  color: inherit;
+}
+
+.experienceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experienceCategory {
+  text-align: left;
+  margin: 10px 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+.position {
+  font-weight: bold;
+  color: inherit;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: inherit;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .position {
+    font-size: 14px;
+  }
+
+  strong {
+    font-size: 12px;
+  }
+
+  .experienceBlock {
+    gap: 0px;
+  }
+
+  .experienceCategory {
+    margin: 0px;
+  }
 }

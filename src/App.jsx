@@ -20,11 +20,11 @@ function App() {
 
   const sections = [
     { id: 1, color: "#ff7f7f", text: "Welcome" },
-    { id: 2, color: "#7fafff", text: "Секція 2" },
-    { id: 3, color: "#7fff7f", text: "Секція 3" },
-    { id: 4, color: "#eb5bc0", text: "Секція 4" },
-    { id: 5, color: "#eb5bc0", text: "Секція 5" },
-    { id: 6, color: "#eb5bc0", text: "Секція 6" },
+    { id: 2, color: "#7fafff", text: "Expertise" },
+    { id: 3, color: "#7fff7f", text: "Experience" },
+    // { id: 4, color: "#eb5bc0", text: "Секція 4" },
+    // { id: 5, color: "#eb5bc0", text: "Секція 5" },
+    { id: 6, color: "#eb5bc0", text: "Contacts" },
   ];
 
   useEffect(() => {
@@ -131,11 +131,22 @@ function App() {
           ref={(el) => (sectionsRef.current[0] = el)}
           isDarkMode={isDarkMode}
         />
-        <Section2 ref={(el) => (sectionsRef.current[1] = el)} />
-        <Section3 ref={(el) => (sectionsRef.current[2] = el)} />
-        <Section4 ref={(el) => (sectionsRef.current[3] = el)} />
-        <Section5 ref={(el) => (sectionsRef.current[4] = el)} />
-        <Section6 ref={(el) => (sectionsRef.current[5] = el)} />
+        <Section2
+          ref={(el) => (sectionsRef.current[1] = el)}
+          isDarkMode={isDarkMode}
+        />
+        <Section3
+          ref={(el) => (sectionsRef.current[2] = el)}
+          isDarkMode={isDarkMode}
+        />
+        {/* <Section4 ref={(el) => (sectionsRef.current[3] = el)} />
+        <Section5 ref={(el) => (sectionsRef.current[4] = el)} /> */}
+
+        {/* перевірити правильність номеру коли буду розкоментовувати закоментовані секції */}
+        <Section6
+          ref={(el) => (sectionsRef.current[3] = el)}
+          isDarkMode={isDarkMode}
+        />
         <Dots
           sections={sections}
           activeIndex={activeIndex}

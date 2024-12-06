@@ -1,4 +1,4 @@
-.stickyHeader {
+/* .stickyHeader {
   position: sticky;
   top: 0;
   background-color: #f1f1f1;
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 100; /*  щоб впевнитись що Typing компонент не видно поверх хедера коли відкрите бургер меню */
+  z-index: 100;
 }
 
 .burgerMenu {
@@ -86,7 +86,6 @@
   width: 100%;
   height: 100%;
   background-color: white;
-  /* Додаткові стилі для головного меню */
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -104,15 +103,206 @@
 
 @media (min-width: 769px) {
   .burgerMenuContainer {
-    display: none; /* Сховати бургер-меню на великому екрані */
+    display: none; 
   }
 
   .navLinks {
-    display: flex; /* Власне "розгорнуте" меню, показане на великому екрані */
-    /* Додаткові стилі для головного меню */
+    display: flex; 
+
   }
 
   .burgerMenu {
-    display: none; /* Сховати іконку бургера */
+    display: none;
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&family=Rubik:wght@800&display=swap");
+
+:root {
+  --bg-color-light: #f9f9f9;
+  --text-color-light: #000;
+  --header-bg-color-light: #f1f1f1;
+
+  --bg-color-dark: #202124;
+  --text-color-dark: #fff;
+  /* --header-bg-color-dark: #3d3d3d; */
+}
+
+body.light-theme {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-theme {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* .stickyHeader {
+  position: sticky;
+  top: 0;
+  color: inherit; 
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-family: "Rubik", sans-serif;
+}
+
+.stickyHeaderDark {
+  position: sticky;
+  top: 0;
+  background-color: #202020;
+  color: inherit; 
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  z-index: 100;
+  font-family: "Rubik", sans-serif;
+} */
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  background-color: var(--header-bg-color-light); /* Додайте явно */
+  color: inherit;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-family: "Rubik", sans-serif;
+}
+
+.stickyHeaderDark {
+  position: sticky;
+  top: 0;
+  background-color: #202020; /* Додайте явно */
+  color: inherit;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  z-index: 100;
+  font-family: "Rubik", sans-serif;
+}
+
+.burgerMenuContainer {
+  background-color: var(--bg-color-light);
+}
+
+body.dark-theme .burgerMenuContainer {
+  background-color: var(--bg-color-dark);
+}
+
+.burgerMenu {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.navLink {
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* .navLink:hover {
+  color: #f7ce46;
+} */
+
+.themeToggle {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .burgerMenu {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .burgerMenuContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color-light);
+    z-index: 1000;
+  }
+
+  .burgerMenuContainerDark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #202020;
+  }
+
+  .burgerMenuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+  }
+
+  .burgerMenuCloseDark {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #f9f9f9;
+  }
+
+  .burgerMenuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .burgerMenuItems .navLink {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .burgerMenuContainer {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+  }
+
+  .burgerMenu {
+    display: none;
   }
 }
