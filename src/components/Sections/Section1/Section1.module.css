@@ -1,4 +1,4 @@
-.section {
+/* .section {
   background-color: #ff7f7f;
   height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   scroll-snap-align: start;
 }
 
-/* --------- */
+
 
 .container {
   display: flex;
@@ -26,7 +26,7 @@
 
   span {
     display: flex;
-    gap: 3px; /* цей gap відповідає за відстань курсору від тексту який пишеться */
+    gap: 3px;  цей gap відповідає за відстань курсору від тексту який пишеться 
     justify-content: center;
 
     a {
@@ -78,11 +78,11 @@
 
 h4 {
   display: flex;
-  align-items: center; /* Це вирівнює текст і компонент по центру вертикально */
+  align-items: center; 
 }
 
 h4 > span {
-  margin-right: 4px; /* Додає невеликий відступ між текстом і компонентом */
+  margin-right: 4px; 
 }
 
 h4 > span,
@@ -109,5 +109,177 @@ h4 > TypingEffect {
       max-width: 400px;
       width: 400px;
     }
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&family=Rubik:wght@800&display=swap");
+
+.section {
+  /* background-color: #fff; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  scroll-snap-align: start;
+  font-family: "Roboto Mono", monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 70px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+  padding: 20px;
+
+  .hero {
+    max-width: 200px;
+    border-radius: 50%;
+    /* transition: transform 0.3s; */
+  }
+
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px;
+
+    a img {
+      width: 30px;
+      transition: transform 0.3s;
+    }
+
+    a img:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    width: fit-content;
+    align-self: center;
+  }
+
+  .resumeButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    width: 126px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    font-family: "Rubik", sans-serif;
+    margin: 30px;
+  }
+
+  .resumeButtonDark {
+    background-color: #f8f8f8;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    width: 126px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+    font-family: "Rubik", sans-serif;
+    margin: 30px;
+  }
+
+  .resumeButton:hover {
+    transform: scale(1.05);
+  }
+
+  .resumeButtonDark:hover {
+    transform: scale(1.05);
+  }
+
+  .resumeButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.nameTitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 2.5rem;
+}
+
+.description {
+  max-width: 300px;
+  /* max-width: 24ch; */
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  min-width: 300px;
+}
+
+h4 {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+
+h4 > span {
+  margin-right: 4px;
+}
+
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .hero {
+      max-width: 350px;
+    }
+  }
+
+  .nameTitle {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    .hero {
+      max-width: 400px;
+    }
+  }
+}
+
+/* Стилі для екрану меншого ніж 800px: */
+@media (max-width: 799px) {
+  .container {
+    gap: 10px;
+  }
+  .nameTitle {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero {
+    width: 100px;
+  }
+
+  .description {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .cvLink {
+    margin-bottom: 10px;
   }
 }

@@ -19,7 +19,7 @@ function App() {
   const isScrollingRef = useRef(false);
 
   const sections = [
-    { id: 1, color: "#ff7f7f", text: "Секція 1" },
+    { id: 1, color: "#ff7f7f", text: "Welcome" },
     { id: 2, color: "#7fafff", text: "Секція 2" },
     { id: 3, color: "#7fff7f", text: "Секція 3" },
     { id: 4, color: "#eb5bc0", text: "Секція 4" },
@@ -127,7 +127,10 @@ function App() {
       />
 
       <div ref={containerRef} className={styles.container} onClick={closeMenu}>
-        <Section1 ref={(el) => (sectionsRef.current[0] = el)} />
+        <Section1
+          ref={(el) => (sectionsRef.current[0] = el)}
+          isDarkMode={isDarkMode}
+        />
         <Section2 ref={(el) => (sectionsRef.current[1] = el)} />
         <Section3 ref={(el) => (sectionsRef.current[2] = el)} />
         <Section4 ref={(el) => (sectionsRef.current[3] = el)} />
