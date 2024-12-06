@@ -93,10 +93,29 @@ function App() {
     };
   }, [activeIndex]);
 
+  // const scrollToSection = (index) => {
+  //   setActiveIndex(index);
+  //   isScrollingRef.current = true;
+  //   sectionsRef.current[index].scrollIntoView({ behavior: "smooth" });
+
+  //   setTimeout(() => {
+  //     isScrollingRef.current = false;
+  //   }, 800);
+  // };
+
   const scrollToSection = (index) => {
     setActiveIndex(index);
     isScrollingRef.current = true;
-    sectionsRef.current[index].scrollIntoView({ behavior: "smooth" });
+
+    const headerHeight = document.querySelector("header").offsetHeight; // Висота хедера
+    const targetSection = sectionsRef.current[index];
+
+    const offsetTop = targetSection.offsetTop - headerHeight; // Компенсація для фіксованого хедера
+
+    containerRef.current.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
 
     setTimeout(() => {
       isScrollingRef.current = false;
