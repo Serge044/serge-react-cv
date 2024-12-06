@@ -232,7 +232,7 @@ const Section6 = React.forwardRef(({ isDarkMode }, ref) => {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/sergemakogon/"
+                href="https://linkedin.com/in/sergemakogon"
                 target="_blank"
                 rel="noopener noreferrer"
               >
