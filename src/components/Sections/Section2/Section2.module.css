@@ -152,3 +152,52 @@ hr {
     padding-bottom: 10px;
   }
 }
+
+@media (max-height: 475px) {
+  .container {
+    flex-direction: row;
+    height: 80dvh;
+    margin-top: -55px;
+    border-radius: 10px;
+    max-height: 265px;
+  }
+
+  .sectionTitle {
+    font-size: 1rem !important;
+    margin: 1px !important;
+    font-family: "Rubik", sans-serif;
+  }
+
+  .skillBlock {
+    gap: 0px;
+  }
+
+  .skillCategory {
+    margin: 5px 0;
+  }
+
+  /* works for all h3, p, hr in the app */
+  h3 {
+    font-size: 1rem !important;
+    margin: 0px !important;
+    font-family: "Rubik", sans-serif;
+  }
+
+  p {
+    font-size: 0.8rem !important;
+    line-height: 1.5;
+  }
+
+  hr {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-family: "Rubik", sans-serif;
+  }
+}
+
+/* make styles for hr not global. fix !important? */

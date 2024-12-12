@@ -120,7 +120,7 @@ h4 > span {
   margin-right: 4px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .container {
     flex-direction: row-reverse;
     align-items: center;
@@ -174,3 +174,30 @@ h4 > span {
 .section {
   scroll-margin-top: 60px; /* Висота вашого хедера */
 }
+
+@media (max-height: 475px) {
+  .container {
+    flex-direction: row;
+    height: 80dvh;
+    margin-top: -55px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .socialLinks {
+    margin: 10px !important;
+  }
+
+  .hero {
+    width: 170px;
+  }
+
+  .nameTitle {
+    font-size: 2rem;
+    align-self: start;
+  }
+}
+
+/* fix !important? */
