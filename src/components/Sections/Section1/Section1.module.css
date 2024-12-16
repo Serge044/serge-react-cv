@@ -179,7 +179,7 @@ h4 > span {
   .container {
     flex-direction: row;
     height: 80dvh;
-    margin-top: -55px;
+    margin-top: -175px;
   }
 
   .description {
@@ -199,7 +199,8 @@ h4 > span {
     align-self: start;
   }
 
-  .resumeButton {
+  .resumeButton,
+  .resumeButtonDark {
     margin: 0px !important;
     margin-top: 10px !important;
     height: 30px !important;

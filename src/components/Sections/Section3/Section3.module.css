@@ -124,8 +124,8 @@ hr {
 @media (max-height: 475px) {
   .container {
     flex-direction: row;
-    height: 80dvh;
-    /* margin-top: -55px; */
+    /* height: 80dvh; */
+    margin-top: -125px;
     border-radius: 10px;
     /* max-height: 265px; */
     padding: 5px;
