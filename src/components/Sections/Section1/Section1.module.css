@@ -183,7 +183,7 @@ h4 > span {
   }
 
   .description {
-    font-size: 12px;
+    font-size: 10px !important;
   }
 
   .socialLinks {
@@ -191,12 +191,19 @@ h4 > span {
   }
 
   .hero {
-    width: 170px;
+    width: 130px;
   }
 
   .nameTitle {
-    font-size: 2rem;
+    font-size: 1rem;
     align-self: start;
+  }
+
+  .resumeButton {
+    margin: 0px !important;
+    margin-top: 10px !important;
+    height: 30px !important;
+    width: 100px !important;
   }
 }
 

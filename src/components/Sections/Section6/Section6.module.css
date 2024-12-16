@@ -156,26 +156,40 @@ a:hover {
     height: 80dvh;
     /* padding: 0px;
     margin: 0px; */
-    gap: 50px;
+    /* gap: 50px; */
   }
 
   input[type="text"],
   input[type="email"],
   textarea {
     width: 250px;
+    height: 10px;
     margin-bottom: 5px;
   }
 
   textarea[name="message"] {
-    height: 50px;
+    height: 20px;
   }
 
   .sectionTitle {
     text-align: start;
     margin: 0px;
+    font-size: 20px;
   }
 
   .detailsSection {
     margin-bottom: 100px;
+  }
+
+  .btn {
+    padding: 10px 10px;
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 }

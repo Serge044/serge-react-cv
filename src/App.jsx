@@ -68,6 +68,24 @@ function App() {
     });
   };
 
+  // завантаження console.log лише один раз, а не два рази як у строгому режимі
+  const hasRanOnce = useRef(false);
+
+  useEffect(() => {
+    if (hasRanOnce.current) return;
+
+    console.log(
+      "%cDecided to look here? Then you should definitely check out Serge's resume!%c\n%chttps://www.serhii-makohon.site/assets/SerhiiMakohonCV-DkIzDFp0.pdf",
+      "background: #222; color: #ffd341; font-size: 16px; font-weight: bold; padding: 10px;", // Unified style for the main message
+      "color: #ffd341; font-size: 16px;", // Style for the newline continuation
+      "color: #ffd341; font-size: 18px; font-weight: bold; text-decoration: underline;" // Style for the link
+    );
+
+    hasRanOnce.current = true;
+  }, []);
+
+  // ---
+
   useEffect(() => {
     const handleScroll = () => {
       if (isScrollingRef.current) return;
