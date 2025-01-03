@@ -81,6 +81,8 @@ hr {
 @media (max-width: 600px) {
   .container {
     padding: 15px;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .sectionTitle {
@@ -111,9 +113,11 @@ hr {
   .container {
     flex-direction: row;
     /* height: 80dvh; */
-    margin-top: -175px;
+    margin-top: -75px;
     border-radius: 10px;
     max-height: 265px;
+    justify-content: center;
+    margin-bottom: 70px;
   }
 
   .sectionTitle {

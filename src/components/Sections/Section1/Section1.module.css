@@ -148,6 +148,9 @@ h4 > span {
 /* Стилі для екрану меншого ніж 800px: */
 @media (max-width: 799px) {
   .container {
+    justify-content: center;
+    /* margin-top: 70px; */
+    margin-bottom: 100px;
     gap: 10px;
   }
   .nameTitle {
@@ -179,7 +182,7 @@ h4 > span {
   .container {
     flex-direction: row;
     height: 80dvh;
-    margin-top: -175px;
+    margin-top: -75px;
   }
 
   .description {

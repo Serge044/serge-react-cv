@@ -91,17 +91,19 @@ hr {
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 20px;
+    padding: 10px;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 0px;
     margin-bottom: 5px;
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .position {
@@ -119,16 +121,22 @@ hr {
   .experienceCategory {
     margin: 0px;
   }
+
+  ul {
+    line-height: 15px;
+  }
 }
 
 @media (max-height: 475px) {
   .container {
     flex-direction: row;
     /* height: 80dvh; */
-    margin-top: -125px;
+    margin-top: -50px;
     border-radius: 10px;
     /* max-height: 265px; */
     padding: 5px;
+    justify-content: center;
+    margin-bottom: 70px;
   }
 
   .title {

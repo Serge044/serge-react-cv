@@ -115,6 +115,8 @@ a:hover {
 @media (max-width: 600px) {
   .container {
     padding: 10px;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   input[type="text"],
@@ -154,10 +156,12 @@ a:hover {
   .container {
     flex-direction: row;
     height: 80dvh;
-    margin-top: -155px;
+    margin-top: -75px;
     /* padding: 0px;
     margin: 0px; */
     /* gap: 50px; */
+    justify-content: center;
+    margin-bottom: 70px;
   }
 
   input[type="text"],
