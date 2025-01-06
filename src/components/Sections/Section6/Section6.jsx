@@ -92,7 +92,7 @@ const Section6 = React.forwardRef(({ isDarkMode }, ref) => {
 
         {/* Contact Details */}
         <div className={styles.detailsSection}>
-          <h1 className={styles.title}>Contact Details</h1>
+          <h1 className={styles.sectionTitle}>Contact Details</h1>
           <ul className={styles.detailsList}>
             <li>
               <a href="tel:+380634328377">📞 +380-63-432-83-77</a>
