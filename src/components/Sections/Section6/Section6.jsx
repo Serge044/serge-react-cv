@@ -120,6 +120,14 @@ const Section6 = React.forwardRef(({ isDarkMode }, ref) => {
                 📍 Kyiv, Ukraine
               </a>
             </li>
+            <li>
+              <a
+                href="/downloads/serhii_makohon_cv.apk"
+                download="serhii_makohon_cv.apk"
+              >
+                📱 Get My Resume App for Android
+              </a>
+            </li>
           </ul>
         </div>
       </section>
