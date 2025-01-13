@@ -32,7 +32,7 @@
 
 [data-theme="light"] .container {
   --container-bg-color: #f0f0f0;
-  color: #333;
+  color: #0e0e0e;
 }
 
 [data-theme="dark"] .container {
@@ -46,7 +46,7 @@
   margin-bottom: 20px;
   text-align: center;
   border-bottom: 2px solid #ddd;
-  color: inherit;
+  /* color: inherit; */
 }
 
 .experienceBlock {
@@ -63,19 +63,19 @@
 
 h3 {
   font-size: 1.5rem;
-  color: inherit;
+  /* color: inherit; */
 }
 
 .position {
   font-weight: bold;
-  color: inherit;
+  /* color: inherit; */
   margin-bottom: 10px;
 }
 
 ul {
   list-style-type: disc;
   margin-left: 20px;
-  color: inherit;
+  /* color: inherit; */
 }
 
 ul li {
@@ -153,7 +153,7 @@ hr {
 
   ul li {
     margin-bottom: 0px;
-    font-size: 10px;
+    font-size: 8px;
   }
 
   ul {
@@ -162,7 +162,14 @@ hr {
   }
 
   strong {
-    font-size: 10px;
+    font-size: 8px;
+  }
+  .hr {
+    display: none;
+  }
+
+  .experienceCategory {
+    margin: 10px;
   }
 }
 

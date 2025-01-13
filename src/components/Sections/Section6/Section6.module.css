@@ -49,7 +49,7 @@ textarea {
 textarea {
   height: 100px;
   width: 500px;
-  resize: vertical;
+  resize: none;
 }
 
 .btnContainer {
@@ -148,6 +148,7 @@ a:hover {
 
   a {
     font-size: 14px;
+    line-height: 18px;
   }
 
   .detailsList {
@@ -176,7 +177,7 @@ a:hover {
   textarea {
     width: 250px;
     height: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
   }
 
   textarea[name="message"] {
@@ -186,17 +187,18 @@ a:hover {
   .sectionTitle {
     text-align: start;
     margin: 0px;
-    font-size: 24px;
+    margin-bottom: 10px;
+    font-size: 1rem;
   }
 
   .detailsSection {
-    margin-bottom: 120px;
+    margin-top: -20px;
     margin-left: 20px;
   }
 
   .btn {
-    padding: 10px 10px;
-    font-size: 0.5rem;
+    padding: 3px 3px;
+    font-size: 0.8rem;
     font-weight: bold;
     color: #fff;
     background-color: var(--primary-color);
@@ -204,5 +206,9 @@ a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  a {
+    line-height: 15px;
+    font-size: 14px;
   }
 }

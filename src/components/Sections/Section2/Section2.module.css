@@ -121,10 +121,10 @@ hr {
     max-height: 265px;
     justify-content: center;
     margin-bottom: 70px;
+    padding: 5px;
   }
 
   .sectionTitle {
-    font-size: 1rem !important;
     margin: 1px !important;
     font-family: "Rubik", sans-serif;
   }

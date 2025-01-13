@@ -25,7 +25,7 @@ const Section3 = React.forwardRef(({ isDarkMode }, ref) => {
               <li>Large scale data labeling, categorization</li>
             </ul>
           </div>
-          <hr />
+          <hr className={styles.hr} />
           <div className={styles.experienceCategory}>
             <h3>Ring</h3>
             <p className={styles.position}>
