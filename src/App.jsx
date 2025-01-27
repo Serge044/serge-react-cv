@@ -30,8 +30,7 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
-        // Можна адаптувати за власними вимогами
-        setIsMenuOpen(false); // Закриваємо меню, якщо переходить на великий екран
+        setIsMenuOpen(false); // Закриваємо меню, якщо переходимо на великий екран
       }
     };
 
@@ -63,7 +62,7 @@ function App() {
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
       localStorage.setItem("theme", newMode ? "dark" : "light"); // Збереження теми в localStorage
-      console.log(`Тема змінена: ${newMode ? "Темна" : "Світла"}`);
+      // console.log(`Тема змінена: ${newMode ? "Темна" : "Світла"}`);
       return newMode;
     });
   };

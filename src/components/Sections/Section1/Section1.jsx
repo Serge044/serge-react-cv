@@ -18,7 +18,7 @@ const Section1 = React.forwardRef(({ isDarkMode }, ref) => {
       name: "Serhii Makohon",
       introduction: "I'm",
       description:
-        "I have over 6 years of experience in IT. I am excited about new challenges and committed to achieving success alongside your team. Let’s make a great impact together ;)",
+        "I have over 6 years of experience in IT. I am excited about new challenges and achieving success alongside with your team. Let’s make a great impact together ;)",
       resumeButton: "Resume",
     },
     uk: {
