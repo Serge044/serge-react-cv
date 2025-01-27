@@ -117,7 +117,7 @@ h4 {
 }
 
 h4 > span {
-  margin-right: 4px;
+  margin-right: 8px;
 }
 
 @media (min-width: 600px) {
@@ -145,7 +145,6 @@ h4 > span {
   }
 }
 
-/* Стилі для екрану меншого ніж 800px: */
 @media (max-width: 799px) {
   .container {
     justify-content: center;
@@ -173,9 +172,8 @@ h4 > span {
   }
 }
 
-/* Додати це до css інших секцій якщо вони також будуть підскакувати */
 .section {
-  scroll-margin-top: 60px; /* Висота вашого хедера */
+  scroll-margin-top: 60px;
 }
 
 @media (max-height: 475px) {

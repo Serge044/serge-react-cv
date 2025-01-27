@@ -1,7 +1,7 @@
 .typingText {
-  display: inline; /* Забезпечує відображення в одному рядку */
-  font-family: inherit; /* Застосовує той самий шрифт, що і для всього тексту */
-  vertical-align: bottom; /* Вирівнює текст і курсор */
+  display: inline;
+  font-family: inherit;
+  vertical-align: bottom;
 }
 
 span {
@@ -11,9 +11,9 @@ span {
 .blinkingCursor {
   font-weight: bold;
   animation: blink 1s step-end infinite;
-  margin-left: -1px; /* Може використовуватися для корекції будь-якого візуального розриву */
+  margin-left: -1px;
   padding: 0;
-  vertical-align: bottom; /* Вирівнює текст і курсор */
+  vertical-align: bottom;
 }
 
 @keyframes blink {

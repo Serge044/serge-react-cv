@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from "react";
-import styles from "./TypingEffect.module.css"; // Імпорт CSS-модуля
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../features/languageSlice";
+import styles from "./TypingEffect.module.css";
 
 const TypingEffect = () => {
-  const texts = [
-    "a Front End Developer",
-    "a Web Developer",
-    "a FED",
-    "just a good guy ;)",
-  ]; // Приклад текстів
+  const language = useSelector(selectLanguage);
+
+  const texts = {
+    en: [
+      "a Front End Developer",
+      "a Web Developer",
+      "a FED",
+      "just a good guy ;)",
+    ],
+    uk: [
+      "фронт енд розробник",
+      "веб Розробник",
+      "роблю інтерфейси",
+      "просто хороший хлопець ;)",
+    ],
+  };
+
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentText = texts[currentTextIndex];
+    const currentText = texts[language][currentTextIndex];
 
     let typingInterval;
 
@@ -31,13 +44,13 @@ const TypingEffect = () => {
         if (displayedText.length === 1) {
           clearInterval(typingInterval);
           setIsDeleting(false);
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          setCurrentTextIndex((prev) => (prev + 1) % texts[language].length);
         }
       }, 50);
     }
 
     return () => clearInterval(typingInterval);
-  }, [displayedText, isDeleting, currentTextIndex, texts]);
+  }, [displayedText, isDeleting, currentTextIndex, texts, language]);
 
   return (
     <span className={styles.typingText}>

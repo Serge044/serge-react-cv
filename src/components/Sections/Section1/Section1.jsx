@@ -7,8 +7,29 @@ import linkedinDark from "../../../assets/linkedin-dark.svg";
 import SerhiiMakohonCV from "../../../assets/SerhiiMakohonCV.pdf";
 import TypingEffect from "../../../utils/TypingEffect/TypingEffect";
 import styles from "./Section1.module.css";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../../features/languageSlice";
 
 const Section1 = React.forwardRef(({ isDarkMode }, ref) => {
+  const language = useSelector(selectLanguage);
+
+  const texts = {
+    en: {
+      name: "Serhii Makohon",
+      introduction: "I'm",
+      description:
+        "I have over 6 years of experience in IT. I am excited about new challenges and committed to achieving success alongside your team. Let’s make a great impact together ;)",
+      resumeButton: "Resume",
+    },
+    uk: {
+      name: "Сергій Макогон",
+      introduction: "Я",
+      description:
+        "Я маю понад 6 років досвіду в IT. Я в захваті від нових викликів і прагну досягати успіху разом із вашою командою. Давайте створювати крутий продукт разом ;)",
+      resumeButton: "Резюме",
+    },
+  };
+
   return (
     <div ref={ref} className={styles.section}>
       <section id="hero" className={styles.container}>
@@ -20,9 +41,9 @@ const Section1 = React.forwardRef(({ isDarkMode }, ref) => {
           />
         </div>
         <div className={styles.info}>
-          <h1 className={styles.nameTitle}>Serhii Makohon</h1>
+          <h1 className={styles.nameTitle}>{texts[language].name}</h1>
           <h4>
-            <span>I'm&nbsp;</span>
+            <span>{texts[language].introduction}</span>
             <TypingEffect />
           </h4>
           <div className={styles.socialLinks}>
@@ -47,18 +68,14 @@ const Section1 = React.forwardRef(({ isDarkMode }, ref) => {
               />
             </a>
           </div>
-          <p className={styles.description}>
-            I have over 6 years of experience in IT. <br />I am excited about
-            new challenges and committed to achieving success alongside your
-            team. Let’s make a great impact together ;&#41;
-          </p>
+          <p className={styles.description}>{texts[language].description}</p>
           <a href={SerhiiMakohonCV} download className={styles.cvLink}>
             <button
               className={
                 isDarkMode ? styles.resumeButtonDark : styles.resumeButton
               }
             >
-              Resume
+              {texts[language].resumeButton}
             </button>
           </a>
         </div>
